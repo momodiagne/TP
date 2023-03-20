@@ -7,7 +7,7 @@ typedef struct{
 
 }list;
 void append(list *l, int n){
-	int* newlist=malloc(sizeof(int)*1);
+	int* newlist=malloc(sizeof(int)*l->len);
 	if (l->len==0)
 		*newlist=realloc(newlist,sizeof(int)*(l->len+1)); 
 	if(l->len & (l->len-1) == 0)
@@ -25,9 +25,9 @@ int main()
 	list l;
 	l.len=0;
 	l.ptrarr=0;
-	for(int i=0;i<5;i++)
+	for(int i=0;i<10;i++)
                append(&l,i);
-	for(int i=0;i<5;i++)
+	for(int i=0;i<10;i++)
 		printf("%d",l.ptrarr[i]);
 	return 0;
 }
